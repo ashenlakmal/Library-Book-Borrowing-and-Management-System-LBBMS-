@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Library System</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      background: #d2e2f1;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .signup-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    .buton {
+      background-color: #0d6efd;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .buton:hover {
+      background-color: #0a58ca;
+    }
+
+    .login-link a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h1 class="text-center mb-4 fw-bold text-primary">Register for Library Access</h1>
+    <form action="php/processregister.php" method="post">
+
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">Name with Initials</label>
+          <input type="text" name="initial_name" class="form-control" placeholder="E.g., S.P. Silva" required>
+        </div>
+        <div class="col">
+          <label class="form-label">Enrollment Number</label>
+          <input type="text" name="enrollment" class="form-control" placeholder="Eg: UWU/ICT/21/0001" required>
+          <small class="form-text text-muted">Enrollment number cannot be changed later.</small>
+        </div>
+      </div>
+
+       <div class="mb-3">
+          <label class="form-label">Faculty</label>
+          <input type="text" name="faculty" class="form-control" placeholder="E.g., Faculty of Technological Studies" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Department</label>
+          <input type="text" name="department" class="form-control" placeholder="E.g., Department of Information and Communication Technology" required>
+        </div>
+
+      <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input type="text" name="address" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" name="age" class="form-control" min="10" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Phone Number (Primary)</label>
+        <input type="tel" name="phone1" class="form-control" placeholder="07XXXXXXXX" required>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">Phone Number (Optional)</label>
+          <input type="tel" name="phone2" class="form-control" placeholder="Optional">
+        </div>
+        <div class="col">
+          <label class="form-label">Phone Number (Optional)</label>
+          <input type="tel" name="phone3" class="form-control" placeholder="Optional">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control" required>
+        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <select name="gender" class="form-select" required>
+          <option selected disabled value="">Choose...</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <small class="form-text text-muted">This cannot be changed later.</small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required>
+        <small class="form-text text-muted">
+          Password must include uppercase, lowercase, number & special character.
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" name="confirmPassword" class="form-control" required>
+      </div>
+
+      <div class="form-check mb-4">
+        <input type="checkbox" class="form-check-input" id="checkcookies" required>
+        <label class="form-check-label" for="checkcookies">I accept the <a href="#" data-bs-toggle="modal" data-bs-target="#cookieModal" style="color: #0a58ca; font-weight: bolder;">Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit" class="buton" name="submit">Register</button>
+
+      <div class="login-link text-center mt-3">
+        <p>Already registered? <a href="login.html">Login here</a></p>
+      </div>
+    </form>
+  </div>
+
+<!-- Privacy Policy Modal (Redesigned) -->
+<div class="modal fade" id="cookieModal" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="cookieModalLabel">
+          <i class="bi bi-shield-lock-fill me-2"></i>Privacy Policy
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="font-size: 0.95rem; line-height: 1.6;">
+        <p><strong>Effective Date:</strong> <span class="text-muted">July 2025</span></p>
+        <p>We are committed to protecting your personal information and providing a secure platform for managing book borrowings. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
+
+        <hr>
+
+        <h6 class="mt-4"><i class="bi bi-collection me-2 text-primary"></i>1. What Information We Collect</h6>
+        <ul>
+          <li>Full name, university ID (e.g., UWU/ICT/22/100)</li>
+          <li>Email address, age, gender, address</li>
+          <li>Contact numbers and encrypted passwords</li>
+          <li>Book details, borrow/return status, availability</li>
+        </ul>
+
+        <h6 class="mt-4"><i class="bi bi-gear-wide-connected me-2 text-primary"></i>2. How We Use Your Information</h6>
+        <ul>
+          <li>To manage borrowing and returning of books</li>
+          <li>To calculate fines for late returns</li>
+          <li>To notify you when reserved books become available</li>
+          <li>To generate fine reports and history</li>
+        </ul>
+
+        <h6 class="mt-4"><i class="bi bi-journals me-2 text-primary"></i>3. Borrowing & Reservation Rules</h6>
+        <ul>
+          <li>Maximum of 2 books per student (borrowed or reserved)</li>
+          <li>Books must be returned within 14 days</li>
+          <li>Reservations are available for unavailable books</li>
+        </ul>
+
+        <h6 class="mt-4"><i class="bi bi-cash-coin me-2 text-primary"></i>4. Fine Calculation Policy</h6>
+        <p>If you return a book late, a fine will be applied as follows:</p>
+
+        <div class="table-responsive w-75 mx-auto">
+          <table class="table table-sm table-bordered text-center align-middle">
+            <thead class="table-light">
+              <tr>
+                <th class="bg-light">Delay</th>
+                <th class="bg-light">Fine</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1–7 days late</td>
+                <td>Rs. 5 per day</td>
+              </tr>
+              <tr>
+                <td>8–28 days late</td>
+                <td>Rs. 10 per week</td>
+              </tr>
+              <tr>
+                <td>29+ days late</td>
+                <td>Rs. 50 per month</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-info text-center w-75 mx-auto mt-3" role="alert">
+          <strong>Example:</strong> 50 days late = 1 month + 2 weeks + 6 days → Rs. <strong>100</strong>
+        </div>
+
+        <h6 class="mt-4"><i class="bi bi-lock-fill me-2 text-primary"></i>5. How We Protect Your Data</h6>
+        <ul>
+          <li>Passwords are encrypted using secure hashing</li>
+          <li>All data stored in a secure MySQL database</li>
+          <li>Only authorized staff have access to records</li>
+        </ul>
+
+        <h6 class="mt-4"><i class="bi bi-person-check-fill me-2 text-primary"></i>6. Your Rights</h6>
+        <ul>
+          <li>You can edit your profile anytime</li>
+          <li>You can cancel reservations before pickup</li>
+          <li>You can return books anytime (subject to fines)</li>
+        </ul>
+
+        <h6 class="mt-4"><i class="bi bi-share-fill me-2 text-primary"></i>7. Data Sharing</h6>
+        <p>Your data is <strong>never shared</strong> with external parties. All data is handled within the university's internal system only.</p>
+
+        <h6 class="mt-4"><i class="bi bi-envelope-open me-2 text-primary"></i>8. Contact Us</h6>
+        <address class="mb-0">
+          <strong>Library ICT Team – Uva Wellassa University</strong><br>
+          📧 <a href="mailto:uwulibrary@uwu.ac.lk">uwulibrary@uwu.ac.lk</a><br>
+          📞 (+94) 76 838 8662
+        </address>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
