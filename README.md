@@ -195,4 +195,3 @@ http://localhost/Library-Book-Borrowing-and-Management-System-LBBMS-
 
 Special thanks to our supervisors for their guidance and support throughout this project.
 
----
