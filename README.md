@@ -8,7 +8,7 @@ The main goal of this project is to reduce manual work, improve accuracy, and ma
 
 <br>
 
-🌐 **Live Demonstration:** [Experience Library Book Borrowing and Management System Here](https://library-book-borrowing-and-management-system-lbbms.atwebpages.com/)
+🌐 **Live Demonstration Video:** [Experience Library Book Borrowing and Management System Here](https://library-book-borrowing-and-management-system-lbbms.atwebpages.com/)
 
 ---
 
