@@ -12,7 +12,7 @@ The main goal of this project is to reduce manual work, improve accuracy, and ma
 
 ---
 
-##  Features
+##  Project Features
 
 ###  Student Features
 - Register and login securely
@@ -33,7 +33,7 @@ The main goal of this project is to reduce manual work, improve accuracy, and ma
 
 ---
 
-##  Technologies Used
+##  Technologies Used for project
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** PHP  
