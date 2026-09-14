@@ -1,4 +1,4 @@
-#  Smart Library Book Borrowing and Management System(LBBMS) New
+#  Smart Library Book Borrowing and Management System(LBBMS)
 
 ##  Project Overview
 This is a web-based library management system developed for university students and staff.  
